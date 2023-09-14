@@ -40,7 +40,7 @@ java {
 }
 
 application {
-    applicationDefaultJvmArgs = [/*'-Dlog4j.configurationFile=log4j2.properties', */'-Dio.netty.maxDirectMemory=-1', '-Dio.netty.allocator.numDirectArenas=1', '-Dio.netty.allocator.numHeapArenas=0', '-XX:MaxDirectMemorySize=8388608']
+    applicationDefaultJvmArgs = [/*'-Dlog4j.configurationFile=log4j2.properties', */'-Dio.netty.maxDirectMemory=134217728', '-Dio.netty.allocator.numDirectArenas=1', '-Dio.netty.allocator.numHeapArenas=0', '-XX:MaxDirectMemorySize=128m']
     // Define the main class for the application.
     mainClass = 'org.dna.netty_test.UnsafeAllocationVsDirectMemory'
 }
@@ -54,7 +54,7 @@ jar {
     duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
 
     manifest {
-        attributes "Main-Class": "org.dna.netty_test.ServerWhichGoOOM"
+        attributes "Main-Class": "org.dna.netty_test.UnsafeAllocationVsDirectMemory"
     }
 
     from {

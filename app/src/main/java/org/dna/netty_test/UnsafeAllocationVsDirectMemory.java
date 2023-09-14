@@ -88,12 +88,6 @@ public class UnsafeAllocationVsDirectMemory {
         ByteBuf bigBuffer = allocator.buffer(4 * MB); // KO
 //        allocateUptoWithBufferOfSize(4 * MB, 8 * KB, allocator); // KO
 //        allocateUptoWithBufferOfSize(4 * MB, 512, allocator); // OK
-
-
-//        [2023-09-13T16:03:21,446][INFO ][org.logstash.beats.BeatsHandler][nioEventLoopGroup-3-18][main][beats_in]
-//        [local: 127.0.0.1:3333, remote: 127.0.0.1:54754] Handling exception: java.lang.OutOfMemoryError:
-//        Cannot reserve 4194304 bytes of direct buffer memory (allocated: 130031617, limit: 134217728)
-//        (caused by: java.lang.OutOfMemoryError: Cannot reserve 4194304 bytes of direct buffer memory (allocated: 130031617, limit: 134217728))
     }
 
     private static List<ByteBuf> allocateUptoWithBufferOfSize(int spaceToFill, int payloadSize, PooledByteBufAllocator allocator) {
